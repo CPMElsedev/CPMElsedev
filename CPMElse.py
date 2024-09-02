@@ -269,29 +269,3 @@ class CPMElse:
         response = requests.post(url, params=params)
         
         return response.status_code == 200
-
-    def set_crash_acc_v2(self):
-        if not self.idToken:
-            return False
-        
-        url = f"{BASE_URL}/player/set_crash_acc_v2.php"
-        params = {
-            "idToken": self.idToken,
-            "key": self.access_key  # Incluindo o parâmetro key
-        }
-        response = requests.post(url, params=params)
-        
-        return response.status_code == 200
-
-    def set_fix_acc_v2(self):
-        if not self.idToken:
-            return False
-        
-        url = f"{BASE_URL}/player/set_fix_acc_v1.php"
-        params = {
-            "idToken": self.idToken,
-            "key": self.access_key  # Incluindo o parâmetro key
-        }
-        response = requests.post(url, params=params)
-        
-        return response.status_code == 200
