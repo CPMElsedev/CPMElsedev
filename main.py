@@ -371,4 +371,11 @@ if __name__ == "__main__":
                     console.print("[bold green]SUCCESSFUL[/bold green].")
                     choice = IntPrompt.ask("[bold][?] Choose an option [red][1: Return to Menu / 0: Exit][/red][/bold]", choices=["1", "0"], show_choices=False)
                     if choice == 1:
-          
+                        continue
+                    else:
+                        break
+                else:
+                    console.print("[bold red]FAILED[/bold red]: Failed to Set Fix V1.")
+            elif service == 0:
+                  break
+            break
