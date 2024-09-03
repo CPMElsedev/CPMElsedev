@@ -163,7 +163,7 @@ if __name__ == "__main__":
             load_player_data(cpm)
             load_key_details(cpm, key_data)
             load_client_details()
-            choices = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "0"]
+            choices = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "0"]
             console.print("[cyan](1):[/cyan] [red]Change Name[/red]", end="\n\n")
             console.print("[cyan](2):[/cyan] [red]Change ID[/red]", end="\n\n")
             console.print("[cyan](3):[/cyan] [red]Insert Money[/red]", end="\n\n")
@@ -178,8 +178,9 @@ if __name__ == "__main__":
             console.print("[cyan](12):[/cyan] [red]Unlock All Calipers[/red]", end="\n\n")
             console.print("[cyan](13):[/cyan] [red]Unlock All Paint[/red]", end="\n\n")
             console.print("[cyan](14):[/cyan] [red]Unlock Car[/red]", end="\n\n")
-            console.print("[cyan](15):[/cyan] [red]Set Crash V1[/red]", end="\n\n")
-            console.print("[cyan](16):[/cyan] [red]Set Fix V1[/red]", end="\n\n")
+            console.print("[cyan](15):[/cyan] [red]Unlock All Animations[/red]", end="\n\n")
+            console.print("[cyan](16):[/cyan] [red]Set Crash V1[/red]", end="\n\n")
+            console.print("[cyan](17):[/cyan] [red]Set Fix V1[/red]", end="\n\n")
             console.print("[cyan](0):[/cyan] [red]Exit[/red]", end="\n\n")
             service = IntPrompt.ask(f"[bold][?] Select a Service [red][1-13 or 0][/red][/bold]", choices=choices, show_choices=False)
             if service == 1:
@@ -343,6 +344,17 @@ if __name__ == "__main__":
                 else:
                     console.print("[bold red]FAILED[/bold red]: Failed to Unlock Car.")
             elif service == 15:
+                success = cpm.unlock_all_animations()
+                if success:
+                    console.print("[bold green]SUCCESSFUL[/bold green].")
+                    choice = IntPrompt.ask("[bold][?] Choose an option [red][1: Return to Menu / 0: Exit][/red][/bold]", choices=["1", "0"], show_choices=False)
+                    if choice == 1:
+                        continue
+                    else:
+                        break
+                else:
+                    console.print("[bold red]FAILED[/bold red]: Failed to Unlock All Animations.")
+            elif service == 16:
                 success = cpm.set_crash_acc_v1()
                 if success:
                     console.print("[bold green]SUCCESSFUL[/bold green].")
@@ -353,17 +365,10 @@ if __name__ == "__main__":
                         break
                 else:
                     console.print("[bold red]FAILED[/bold red]: Failed to Set Crash V1.")
-            elif service == 16:
+            elif service == 17:
                 success = cpm.set_fix_acc_v1()
                 if success:
                     console.print("[bold green]SUCCESSFUL[/bold green].")
                     choice = IntPrompt.ask("[bold][?] Choose an option [red][1: Return to Menu / 0: Exit][/red][/bold]", choices=["1", "0"], show_choices=False)
                     if choice == 1:
-                        continue
-                    else:
-                        break
-                else:
-                    console.print("[bold red]FAILED[/bold red]: Failed to Set Fix V1.")
-            elif service == 0:
-                break
-        break
+          
