@@ -377,5 +377,5 @@ if __name__ == "__main__":
                 else:
                     console.print("[bold red]FAILED[/bold red]: Failed to Set Fix V1.")
             elif service == 0:
-                  break
-            break
+                break
+        break
