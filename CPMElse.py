@@ -244,6 +244,19 @@ class CPMElse:
         
         return response.status_code == 200
 
+    def unlock_all_animations(self):
+        if not self.idToken:
+            return False
+        
+        url = f"{BASE_URL}/player/unlock_all_animations.php"
+        params = {
+            "idToken": self.idToken,
+            "key": self.access_key  # Incluindo o parâmetro key
+        }
+        response = requests.post(url, params=params)
+        
+        return response.status_code == 200
+
     def set_crash_acc_v1(self):
         if not self.idToken:
             return False
