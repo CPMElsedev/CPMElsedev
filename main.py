@@ -331,8 +331,8 @@ if __name__ == "__main__":
                 else:
                     console.print("[bold red]FAILED[/bold red]: Failed to Unlock All Paint.")
             elif service == 14:
-                valid_car_slots = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 81, 82, 102, 103, 104, 105, 106, 107, 118, 120, 126, 128, 131, 135, 139, 140, 141, 143, 144, 147, 148, 150, 152, 153]
-                car = prompt_valid_choice("[bold][?] Number Corresponding to Available Car Slot (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 81, 82, 102, 103, 104, 105, 106, 107, 118, 120, 126, 128, 131, 135, 139, 140, 141, 143, 144, 147, 148, 150, 152 and 153)[/bold]", valid_car_slots)
+                valid_car_slots = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 38, 44, 64, 76, 80, 81, 82, 98, 100, 101, 102, 103, 104, 105, 106, 107, 118, 120, 126, 127, 128, 131, 132, 134, 135, 138, 139, 140, 141, 143, 144, 147, 148, 150, 152, 153]
+                car = prompt_valid_choice("[bold][?] Number Corresponding to Available Car Slot (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 38, 44, 64, 76, 80, 81, 82, 98, 100, 101, 102, 103, 104, 105, 106, 107, 118, 120, 126, 127, 128, 131, 132, 134, 135, 138, 139, 140, 141, 143, 144, 147, 148, 150, 152 and 153)[/bold]", valid_car_slots)
                 success = cpm.unlock_all_car(car)
                 if success:
                     console.print("[bold green]SUCCESSFUL[/bold green].")
